@@ -1,67 +1,67 @@
 # Java-Stream
-**<h1>Java-Stream API »ç¿ë °¡ÀÌµå ¹× ½ÇÃø º¸°í¼­</h1>**
+**<h1>Java-Stream API ì‚¬ìš© ê°€ì´ë“œ ë° ì‹¤ì¸¡ ë³´ê³ ì„œ</h1>**
 
 
-ÀÌ ¹®¼­´Â Java Stream API¸¦ È¿À²ÀûÀÌ°í ¾ÈÀüÇÏ°Ô »ç¿ëÇÏ±â À§ÇÑ 7°¡Áö ÇÙ½É ¿øÄ¢À» ½Ç½ÀÇØº¸°í ½Ç½À °á°ú¸¦ ´Ù·ì´Ï´Ù.
+ì´ ë¬¸ì„œëŠ” Java Stream APIë¥¼ íš¨ìœ¨ì ì´ê³  ì•ˆì „í•˜ê²Œ ì‚¬ìš©í•˜ê¸° ìœ„í•œ 7ê°€ì§€ í•µì‹¬ ì›ì¹™ì„ ì‹¤ìŠµí•´ë³´ê³  ì‹¤ìŠµ ê²°ê³¼ë¥¼ ë‹¤ë£¹ë‹ˆë‹¤.
 
 
 ---
 
-**<h2>? Stream API »ç¿ë ½Ã ÁÖÀÇÇØ¾ß ÇÒ 7°¡Áö </h2>**
+**<h2>? Stream API ì‚¬ìš© ì‹œ ì£¼ì˜í•´ì•¼ í•  7ê°€ì§€ </h2>**
 
-**1. Àç»ç¿ë ºÒ°¡´É (One-time Use)**: Á¾´Ü ¿¬»ê ÈÄ ½ºÆ®¸²Àº ´İÈü´Ï´Ù. ÇÊ¿ä ½Ã ´Ù½Ã »ı¼ºÇÏ¼¼¿ä.
+**1. ì¬ì‚¬ìš© ë¶ˆê°€ëŠ¥ (One-time Use)**: ì¢…ë‹¨ ì—°ì‚° í›„ ìŠ¤íŠ¸ë¦¼ì€ ë‹«í™ë‹ˆë‹¤. í•„ìš” ì‹œ ë‹¤ì‹œ ìƒì„±í•˜ì„¸ìš”.
 
-**2. ¹«ºĞº°ÇÑ º´·Ä ½ºÆ®¸² Áö¾ç**: ½º·¹µå °ü¸® ºñ¿ëÀ¸·Î ÀÎÇØ µ¥ÀÌÅÍ°¡ ÀûÀ¸¸é ¿ÀÈ÷·Á ´À·ÁÁú ¼ö ÀÖ½À´Ï´Ù.
+**2. ë¬´ë¶„ë³„í•œ ë³‘ë ¬ ìŠ¤íŠ¸ë¦¼ ì§€ì–‘**: ìŠ¤ë ˆë“œ ê´€ë¦¬ ë¹„ìš©ìœ¼ë¡œ ì¸í•´ ë°ì´í„°ê°€ ì ìœ¼ë©´ ì˜¤íˆë ¤ ëŠë ¤ì§ˆ ìˆ˜ ìˆìŠµë‹ˆë‹¤.
 
-**3. ºÎÀÛ¿ë(Side Effect) ÇÇÇÏ±â**: ¿ÜºÎ º¯¼ö ¼öÁ¤Àº Áö¾çÇÏ°í collect()¸¦ »ç¿ëÇÏ¼¼¿ä. (½ÇÇè ¼½¼Ç Âü°í)
+**3. ë¶€ì‘ìš©(Side Effect) í”¼í•˜ê¸°**: ì™¸ë¶€ ë³€ìˆ˜ ìˆ˜ì •ì€ ì§€ì–‘í•˜ê³  collect()ë¥¼ ì‚¬ìš©í•˜ì„¸ìš”. (ì‹¤í—˜ ì„¹ì…˜ ì°¸ê³ )
 
-**4. ¸Ş¼­µå ÂüÁ¶ È°¿ë**: ¶÷´Ù°¡ ±æ¾îÁö¸é ¸Ş¼­µå·Î ºĞ¸®ÇÏ¿© °¡µ¶¼ºÀ» ³ôÀÌ¼¼¿ä.
+**4. ë©”ì„œë“œ ì°¸ì¡° í™œìš©**: ëŒë‹¤ê°€ ê¸¸ì–´ì§€ë©´ ë©”ì„œë“œë¡œ ë¶„ë¦¬í•˜ì—¬ ê°€ë…ì„±ì„ ë†’ì´ì„¸ìš”.
 
-**5. ¹«ÇÑ ½ºÆ®¸² ÁÖÀÇ**: iterate(), generate() »ç¿ë ½Ã ¹İµå½Ã limit()À» ¼³Á¤ÇÏ¼¼¿ä.
+**5. ë¬´í•œ ìŠ¤íŠ¸ë¦¼ ì£¼ì˜**: iterate(), generate() ì‚¬ìš© ì‹œ ë°˜ë“œì‹œ limit()ì„ ì„¤ì •í•˜ì„¸ìš”.
 
-**6. ¹Ú½Ì(Boxing) ¿À¹öÇìµå**: IntStream µî ±âº»Çü ½ºÆ®¸²À» »ç¿ëÇÏ¿© ¼º´ÉÀ» ÃÖÀûÈ­ÇÏ¼¼¿ä.
+**6. ë°•ì‹±(Boxing) ì˜¤ë²„í—¤ë“œ**: IntStream ë“± ê¸°ë³¸í˜• ìŠ¤íŠ¸ë¦¼ì„ ì‚¬ìš©í•˜ì—¬ ì„±ëŠ¥ì„ ìµœì í™”í•˜ì„¸ìš”.
 
-**7. ÀüÅëÀû Loop °í·Á**: °¡µ¶¼º°ú ¼º´É ¸é¿¡¼­ ´Ü¼ø for-loop°¡ À¯¸®ÇÒ ¶§µµ ÀÖ½À´Ï´Ù.
+**7. ì „í†µì  Loop ê³ ë ¤**: ê°€ë…ì„±ê³¼ ì„±ëŠ¥ ë©´ì—ì„œ ë‹¨ìˆœ for-loopê°€ ìœ ë¦¬í•  ë•Œë„ ìˆìŠµë‹ˆë‹¤.
 
 
-<h2> ? ½ÇÁõ Å×½ºÆ® 1: ¿¬»êÀÇ º¹Àâµµ¿Í º´·ÄÈ­ÀÇ »ó°ü°ü°è </h2>
+<h2> ? ì‹¤ì¦ í…ŒìŠ¤íŠ¸ 1: ì—°ì‚°ì˜ ë³µì¡ë„ì™€ ë³‘ë ¬í™”ì˜ ìƒê´€ê´€ê³„ </h2>
 
-**º´·Ä Ã³¸®´Â µ¥ÀÌÅÍ¸¦ ÂÉ°³°í(Split) ÇÕÄ¡´Â(Merge) °úÁ¤¿¡¼­ ¿À¹öÇìµå°¡ ¹ß»ıÇÕ´Ï´Ù.**
+**ë³‘ë ¬ ì²˜ë¦¬ëŠ” ë°ì´í„°ë¥¼ ìª¼ê°œê³ (Split) í•©ì¹˜ëŠ”(Merge) ê³¼ì •ì—ì„œ ì˜¤ë²„í—¤ë“œê°€ ë°œìƒí•©ë‹ˆë‹¤.**
 
-<h3>½ÇÇè °úÁ¤</h3>
-<h4>1. °¡º­¿î ¿¬»ê : 100¸¸ °³ µ¥ÀÌÅÍ¿¡ ´ëÇØ ´Ü¼ø Á¦°ö(n * n) ¼öÇà. </h4>
+<h3>ì‹¤í—˜ ê³¼ì •</h3>
+<h4>1. ê°€ë²¼ìš´ ì—°ì‚° : 100ë§Œ ê°œ ë°ì´í„°ì— ëŒ€í•´ ë‹¨ìˆœ ì œê³±(n * n) ìˆ˜í–‰. </h4>
 
 # Java-Stream
 
-<h1>Java-Stream API »ç¿ë °¡ÀÌµå ¹× ½ÇÃø º¸°í¼­</h1>
+<h1>Java-Stream API ì‚¬ìš© ê°€ì´ë“œ ë° ì‹¤ì¸¡ ë³´ê³ ì„œ</h1>
 
-ÀÌ ¹®¼­´Â Java Stream API¸¦ È¿À²ÀûÀÌ°í ¾ÈÀüÇÏ°Ô »ç¿ëÇÏ±â À§ÇÑ 7°¡Áö ÇÙ½É ¿øÄ¢À» ½Ç½ÀÇØº¸°í ±× °á°ú¸¦ ´Ù·ì´Ï´Ù.
-
----
-
-<h2>? Stream API »ç¿ë ½Ã ÁÖÀÇÇØ¾ß ÇÒ 7°¡Áö </h2>
-
-1. **Àç»ç¿ë ºÒ°¡´É (One-time Use)**: Á¾´Ü ¿¬»ê ÈÄ ½ºÆ®¸²Àº ´İÈü´Ï´Ù. ÇÊ¿ä ½Ã ´Ù½Ã »ı¼ºÇÏ¼¼¿ä.
-2. **¹«ºĞº°ÇÑ º´·Ä ½ºÆ®¸² Áö¾ç**: ½º·¹µå °ü¸® ºñ¿ëÀ¸·Î ÀÎÇØ µ¥ÀÌÅÍ°¡ ÀûÀ¸¸é ¿ÀÈ÷·Á ´À·ÁÁú ¼ö ÀÖ½À´Ï´Ù.
-3. **ºÎÀÛ¿ë(Side Effect) ÇÇÇÏ±â**: ¿ÜºÎ º¯¼ö ¼öÁ¤Àº Áö¾çÇÏ°í `collect()`¸¦ »ç¿ëÇÏ¼¼¿ä. (½ÇÇè ¼½¼Ç Âü°í)
-4. **¸Ş¼­µå ÂüÁ¶ È°¿ë**: ¶÷´Ù°¡ ±æ¾îÁö¸é ¸Ş¼­µå·Î ºĞ¸®ÇÏ¿© °¡µ¶¼ºÀ» ³ôÀÌ¼¼¿ä.
-5. **¹«ÇÑ ½ºÆ®¸² ÁÖÀÇ**: `iterate()`, `generate()` »ç¿ë ½Ã ¹İµå½Ã `limit()`À» ¼³Á¤ÇÏ¼¼¿ä.
-6. **¹Ú½Ì(Boxing) ¿À¹öÇìµå**: `IntStream` µî ±âº»Çü ½ºÆ®¸²À» »ç¿ëÇÏ¿© ¼º´ÉÀ» ÃÖÀûÈ­ÇÏ¼¼¿ä.
-7. **ÀüÅëÀû Loop °í·Á**: °¡µ¶¼º°ú ¼º´É ¸é¿¡¼­ ´Ü¼ø for-loop°¡ À¯¸®ÇÒ ¶§µµ ÀÖ½À´Ï´Ù.
+ì´ ë¬¸ì„œëŠ” Java Stream APIë¥¼ íš¨ìœ¨ì ì´ê³  ì•ˆì „í•˜ê²Œ ì‚¬ìš©í•˜ê¸° ìœ„í•œ 7ê°€ì§€ í•µì‹¬ ì›ì¹™ì„ ì‹¤ìŠµí•´ë³´ê³  ê·¸ ê²°ê³¼ë¥¼ ë‹¤ë£¹ë‹ˆë‹¤.
 
 ---
 
-<h2> ? ½ÇÁõ Å×½ºÆ® 1: ¿¬»êÀÇ º¹Àâµµ¿Í º´·ÄÈ­ÀÇ »ó°ü°ü°è </h2>
+<h2>? Stream API ì‚¬ìš© ì‹œ ì£¼ì˜í•´ì•¼ í•  7ê°€ì§€ </h2>
 
-**º´·Ä Ã³¸®´Â µ¥ÀÌÅÍ¸¦ ÂÉ°³°í(Split) ÇÕÄ¡´Â(Merge) °úÁ¤¿¡¼­ ¿À¹öÇìµå°¡ ¹ß»ıÇÕ´Ï´Ù.**
+1. **ì¬ì‚¬ìš© ë¶ˆê°€ëŠ¥ (One-time Use)**: ì¢…ë‹¨ ì—°ì‚° í›„ ìŠ¤íŠ¸ë¦¼ì€ ë‹«í™ë‹ˆë‹¤. í•„ìš” ì‹œ ë‹¤ì‹œ ìƒì„±í•˜ì„¸ìš”.
+2. **ë¬´ë¶„ë³„í•œ ë³‘ë ¬ ìŠ¤íŠ¸ë¦¼ ì§€ì–‘**: ìŠ¤ë ˆë“œ ê´€ë¦¬ ë¹„ìš©ìœ¼ë¡œ ì¸í•´ ë°ì´í„°ê°€ ì ìœ¼ë©´ ì˜¤íˆë ¤ ëŠë ¤ì§ˆ ìˆ˜ ìˆìŠµë‹ˆë‹¤.
+3. **ë¶€ì‘ìš©(Side Effect) í”¼í•˜ê¸°**: ì™¸ë¶€ ë³€ìˆ˜ ìˆ˜ì •ì€ ì§€ì–‘í•˜ê³  `collect()`ë¥¼ ì‚¬ìš©í•˜ì„¸ìš”. (ì‹¤í—˜ ì„¹ì…˜ ì°¸ê³ )
+4. **ë©”ì„œë“œ ì°¸ì¡° í™œìš©**: ëŒë‹¤ê°€ ê¸¸ì–´ì§€ë©´ ë©”ì„œë“œë¡œ ë¶„ë¦¬í•˜ì—¬ ê°€ë…ì„±ì„ ë†’ì´ì„¸ìš”.
+5. **ë¬´í•œ ìŠ¤íŠ¸ë¦¼ ì£¼ì˜**: `iterate()`, `generate()` ì‚¬ìš© ì‹œ ë°˜ë“œì‹œ `limit()`ì„ ì„¤ì •í•˜ì„¸ìš”.
+6. **ë°•ì‹±(Boxing) ì˜¤ë²„í—¤ë“œ**: `IntStream` ë“± ê¸°ë³¸í˜• ìŠ¤íŠ¸ë¦¼ì„ ì‚¬ìš©í•˜ì—¬ ì„±ëŠ¥ì„ ìµœì í™”í•˜ì„¸ìš”.
+7. **ì „í†µì  Loop ê³ ë ¤**: ê°€ë…ì„±ê³¼ ì„±ëŠ¥ ë©´ì—ì„œ ë‹¨ìˆœ for-loopê°€ ìœ ë¦¬í•  ë•Œë„ ìˆìŠµë‹ˆë‹¤.
+
+---
+
+<h2> ? ì‹¤ì¦ í…ŒìŠ¤íŠ¸ 1: ì—°ì‚°ì˜ ë³µì¡ë„ì™€ ë³‘ë ¬í™”ì˜ ìƒê´€ê´€ê³„ </h2>
+
+**ë³‘ë ¬ ì²˜ë¦¬ëŠ” ë°ì´í„°ë¥¼ ìª¼ê°œê³ (Split) í•©ì¹˜ëŠ”(Merge) ê³¼ì •ì—ì„œ ì˜¤ë²„í—¤ë“œê°€ ë°œìƒí•©ë‹ˆë‹¤.**
 
 
 
-<h3>½ÇÇè °úÁ¤</h3>
+<h3>ì‹¤í—˜ ê³¼ì •</h3>
 
-<h4>1. °¡º­¿î ¿¬»ê : 100¸¸ °³ µ¥ÀÌÅÍ¿¡ ´ëÇØ ´Ü¼ø Á¦°ö(n * n) ¼öÇà. </h4>
+<h4>1. ê°€ë²¼ìš´ ì—°ì‚° : 100ë§Œ ê°œ ë°ì´í„°ì— ëŒ€í•´ ë‹¨ìˆœ ì œê³±(n * n) ìˆ˜í–‰. </h4>
 
-<details><summary>1¹ø ½ÇÇè ÄÚµå ÆîÄ¡±â/Á¢±â</summary>
+<details><summary>1ë²ˆ ì‹¤í—˜ ì½”ë“œ í¼ì¹˜ê¸°/ì ‘ê¸°</summary>
 
 ```java
 package lab02;
@@ -73,24 +73,24 @@ import java.util.stream.IntStream;
 public class LargeDatasetPerformanceTest {
 
     public static void main(String[] args) {
-        // ÇÁ·Î±×·¥ ½ÇÇà ½Ã ÃøÁ¤ ¸Ş¼­µå È£Ãâ
+        // í”„ë¡œê·¸ë¨ ì‹¤í–‰ ì‹œ ì¸¡ì • ë©”ì„œë“œ í˜¸ì¶œ
         measureLargeTask();
     }
 
     public static void measureLargeTask() {
-        // 100¸¸ °³ÀÇ µ¥ÀÌÅÍ »ı¼º
+        // 100ë§Œ ê°œì˜ ë°ì´í„° ìƒì„±
         List<Integer> numbers = IntStream.rangeClosed(1, 1_000_000)
                                          .boxed()
                                          .collect(Collectors.toList());
 
-        // [ºñ±³±º] Á÷·Ä ½ºÆ®¸² ½ÇÇà ½Ã°£
+        // [ë¹„êµêµ°] ì§ë ¬ ìŠ¤íŠ¸ë¦¼ ì‹¤í–‰ ì‹œê°„
         long startSerial = System.nanoTime();
         List<Integer> serialResult = numbers.stream()
                                             .map(n -> n * n)
                                             .collect(Collectors.toList());
         long endSerial = System.nanoTime();
 
-        // [´ëÁ¶±º] º´·Ä ½ºÆ®¸² ½ÇÇà ½Ã°£
+        // [ëŒ€ì¡°êµ°] ë³‘ë ¬ ìŠ¤íŠ¸ë¦¼ ì‹¤í–‰ ì‹œê°„
         long startParallel = System.nanoTime();
         List<Integer> parallelResult = numbers.parallelStream()
                                               .map(n -> n * n)
@@ -105,11 +105,11 @@ public class LargeDatasetPerformanceTest {
 ```
 </details>
 
-<img width="827" alt="½ÇÇè1 °á°ú" src="images/image1.png" />
+<img width="827" alt="ì‹¤í—˜1 ê²°ê³¼" src="images/image1.png" />
 
 
-<h4> 2. ¹«°Å¿î ¿¬»ê : º¹ÀâÇÑ ¼öÇĞ ¿¬»ê(Math.sqrt, sin, cos) ·çÇÁ¸¦ 100È¸ Ãß°¡ </h4>
- <details><summary>2¹ø ½ÇÇè ÄÚµå ÆîÄ¡±â/Á¢±â</summary>
+<h4> 2. ë¬´ê±°ìš´ ì—°ì‚° : ë³µì¡í•œ ìˆ˜í•™ ì—°ì‚°(Math.sqrt, sin, cos) ë£¨í”„ë¥¼ 100íšŒ ì¶”ê°€ </h4>
+ <details><summary>2ë²ˆ ì‹¤í—˜ ì½”ë“œ í¼ì¹˜ê¸°/ì ‘ê¸°</summary>
 
 ``` java
 package lab02;
@@ -125,24 +125,24 @@ public class LargeDatasetPerformanceTest {
     }
 
     public static void measureLargeTask() {
-        // 100¸¸ °³ÀÇ µ¥ÀÌÅÍ »ı¼º
+        // 100ë§Œ ê°œì˜ ë°ì´í„° ìƒì„±
         List<Integer> numbers = IntStream.rangeClosed(1, 1_000_000)
                                          .boxed()
                                          .collect(Collectors.toList());
 
-        // [ºñ±³±º] Á÷·Ä ½ºÆ®¸² ½ÇÇà ½Ã°£
+        // [ë¹„êµêµ°] ì§ë ¬ ìŠ¤íŠ¸ë¦¼ ì‹¤í–‰ ì‹œê°„
         long startSerial = System.nanoTime();
         List<Double> serialResult = numbers.stream()
-                                            // .map(n -> n * n) // ±âÁ¸ °¡º­¿î ¿¬»ê
-                                            .map(LargeDatasetPerformanceTest::heavyCompute) // ¹«°Å¿î ¿¬»ê Ãß°¡
+                                            // .map(n -> n * n) // ê¸°ì¡´ ê°€ë²¼ìš´ ì—°ì‚°
+                                            .map(LargeDatasetPerformanceTest::heavyCompute) // ë¬´ê±°ìš´ ì—°ì‚° ì¶”ê°€
                                             .collect(Collectors.toList());
         long endSerial = System.nanoTime();
 
-        // [´ëÁ¶±º] º´·Ä ½ºÆ®¸² ½ÇÇà ½Ã°£
+        // [ëŒ€ì¡°êµ°] ë³‘ë ¬ ìŠ¤íŠ¸ë¦¼ ì‹¤í–‰ ì‹œê°„
         long startParallel = System.nanoTime();
         List<Double> parallelResult = numbers.parallelStream()
-                                              // .map(n -> n * n) // ±âÁ¸ °¡º­¿î ¿¬»ê
-                                              .map(LargeDatasetPerformanceTest::heavyCompute) // ¹«°Å¿î ¿¬»ê Ãß°¡
+                                              // .map(n -> n * n) // ê¸°ì¡´ ê°€ë²¼ìš´ ì—°ì‚°
+                                              .map(LargeDatasetPerformanceTest::heavyCompute) // ë¬´ê±°ìš´ ì—°ì‚° ì¶”ê°€
                                               .collect(Collectors.toList());
         long endParallel = System.nanoTime();
 
@@ -150,10 +150,10 @@ public class LargeDatasetPerformanceTest {
         System.out.println("Parallel Stream Time: " + (endParallel - startParallel) / 1_000_000.0 + " ms");
     }
 
-    // CPU ºÎÇÏ¸¦ ½Ã¹Ä·¹ÀÌ¼ÇÇÏ±â À§ÇÑ ¹«°Å¿î ¿¬»ê ¸Ş¼­µå
+    // CPU ë¶€í•˜ë¥¼ ì‹œë®¬ë ˆì´ì…˜í•˜ê¸° ìœ„í•œ ë¬´ê±°ìš´ ì—°ì‚° ë©”ì„œë“œ
     private static double heavyCompute(Integer n) {
         double result = 0;
-        // °¢ ¼ıÀÚ¸¶´Ù 100¹øÀÇ º¹ÀâÇÑ ¼öÇĞ ¿¬»êÀ» ¼öÇà
+        // ê° ìˆ«ìë§ˆë‹¤ 100ë²ˆì˜ ë³µì¡í•œ ìˆ˜í•™ ì—°ì‚°ì„ ìˆ˜í–‰
         for (int i = 0; i < 100; i++) {
             result += Math.sqrt(Math.sin(i) * Math.cos(i) + Math.PI);
         }
@@ -163,27 +163,27 @@ public class LargeDatasetPerformanceTest {
 ```
 </details>
 
-<img width="827" alt="½ÇÇè2 °á°ú" src="images/image2.png" />
+<img width="827" alt="ì‹¤í—˜2 ê²°ê³¼" src="images/image2.png" />
 
-°á°ú: ¹«°Å¿î ¿¬»ê¿¡¼­´Â º´·Ä(Parallel) ½ºÆ®¸²ÀÌ ÈÎ¾À È¿À²ÀûÀÔ´Ï´Ù.
+ê²°ê³¼: ë¬´ê±°ìš´ ì—°ì‚°ì—ì„œëŠ” ë³‘ë ¬(Parallel) ìŠ¤íŠ¸ë¦¼ì´ í›¨ì”¬ íš¨ìœ¨ì ì…ë‹ˆë‹¤.
 
 
 
-**ÃÖÁ¾ ¿ä¾à**
-- µ¥ÀÌÅÍ°¡ Àû°Å³ª ¿¬»êÀÌ ´Ü¼øÇÏ¸é? Á÷·Ä ½ºÆ®¸² »ç¿ë.
+**ìµœì¢… ìš”ì•½**
+- ë°ì´í„°ê°€ ì ê±°ë‚˜ ì—°ì‚°ì´ ë‹¨ìˆœí•˜ë©´? ì§ë ¬ ìŠ¤íŠ¸ë¦¼ ì‚¬ìš©.
 
-- µ¥ÀÌÅÍ°¡ ¸¹°í ¿¬»êÀÌ º¹ÀâÇÏ¸é? º´·Ä ½ºÆ®¸² °í·Á.
+- ë°ì´í„°ê°€ ë§ê³  ì—°ì‚°ì´ ë³µì¡í•˜ë©´? ë³‘ë ¬ ìŠ¤íŠ¸ë¦¼ ê³ ë ¤.
 
 ---
 
 
-<h3> Ãß°¡ ½ÇÇè ³»¿ë </h3>
-°´Ã¼ »ı¼º ºñ¿ëÀ» ÃÖ¼ÒÈ­ÇÏ¿© º´·Ä Ã³¸®ÀÇ ¼º´ÉÀ» ±Ø´ëÈ­ÇÏ´Â ½ÇÇèÀ» ÁøÇàÇß½À´Ï´Ù.
+<h3> ì¶”ê°€ ì‹¤í—˜ ë‚´ìš© </h3>
+ê°ì²´ ìƒì„± ë¹„ìš©ì„ ìµœì†Œí™”í•˜ì—¬ ë³‘ë ¬ ì²˜ë¦¬ì˜ ì„±ëŠ¥ì„ ê·¹ëŒ€í™”í•˜ëŠ” ì‹¤í—˜ì„ ì§„í–‰í–ˆìŠµë‹ˆë‹¤.
 
-<h4>1. boxed() ¸Ş¼Òµå¿Í ¿À¹öÇìµå</h4>
-`boxed()` ¸Ş¼Òµå´Â ±âº»Çü ½ºÆ®¸²(Primitive Stream)À» °´Ã¼Çü ½ºÆ®¸²(Object Stream)À¸·Î º¯È¯ÇÕ´Ï´Ù. JavaÀÇ `IntStream`, `LongStream` µîÀº ¸Ş¸ğ¸® È¿À²À» À§ÇØ ±âº»Çü µ¥ÀÌÅÍ¸¦ Á÷Á¢ ´Ù·çÁö¸¸, ÀÏ¹İ `Stream<Integer>`´Â ·¡ÆÛ Å¬·¡½º °´Ã¼·Î °¨½Î´Â '¹Ú½Ì' °úÁ¤ÀÌ ÇÊ¿äÇÏ¸ç ÀÌ °úÁ¤¿¡¼­ Ãß°¡ÀûÀÎ ÀÚ¿øÀÌ ¼Ò¸ğµË´Ï´Ù.
+<h4>1. boxed() ë©”ì†Œë“œì™€ ì˜¤ë²„í—¤ë“œ</h4>
+`boxed()` ë©”ì†Œë“œëŠ” ê¸°ë³¸í˜• ìŠ¤íŠ¸ë¦¼(Primitive Stream)ì„ ê°ì²´í˜• ìŠ¤íŠ¸ë¦¼(Object Stream)ìœ¼ë¡œ ë³€í™˜í•©ë‹ˆë‹¤. Javaì˜ `IntStream`, `LongStream` ë“±ì€ ë©”ëª¨ë¦¬ íš¨ìœ¨ì„ ìœ„í•´ ê¸°ë³¸í˜• ë°ì´í„°ë¥¼ ì§ì ‘ ë‹¤ë£¨ì§€ë§Œ, ì¼ë°˜ `Stream<Integer>`ëŠ” ë˜í¼ í´ë˜ìŠ¤ ê°ì²´ë¡œ ê°ì‹¸ëŠ” 'ë°•ì‹±' ê³¼ì •ì´ í•„ìš”í•˜ë©° ì´ ê³¼ì •ì—ì„œ ì¶”ê°€ì ì¸ ìì›ì´ ì†Œëª¨ë©ë‹ˆë‹¤.
 
-<details> <summary>ÃÖÀûÈ­ ½ÇÇè ÄÚµå ÆîÄ¡±â/Á¢±â</summary>
+<details> <summary>ìµœì í™” ì‹¤í—˜ ì½”ë“œ í¼ì¹˜ê¸°/ì ‘ê¸°</summary>
 
 ```java
 package lab02;
@@ -199,14 +199,14 @@ public class LargeDatasetPerformanceTest1 {
     public static void measureLargeTask() {
         int size = 1_000_000;
 
-        // [ºñ±³±º] Á÷·Ä ±âº»Çü ½ºÆ®¸²
+        // [ë¹„êµêµ°] ì§ë ¬ ê¸°ë³¸í˜• ìŠ¤íŠ¸ë¦¼
         long startSerial = System.nanoTime();
         double serialSum = IntStream.rangeClosed(1, size)
                                     .mapToDouble(LargeDatasetPerformanceTest1::heavyCompute)
                                     .sum(); 
         long endSerial = System.nanoTime();
 
-        // [´ëÁ¶±º] º´·Ä ±âº»Çü ½ºÆ®¸²
+        // [ëŒ€ì¡°êµ°] ë³‘ë ¬ ê¸°ë³¸í˜• ìŠ¤íŠ¸ë¦¼
         long startParallel = System.nanoTime();
         double parallelSum = IntStream.rangeClosed(1, size)
                                       .parallel()
@@ -230,12 +230,281 @@ public class LargeDatasetPerformanceTest1 {
 
 </details>
 
-<img width="827" alt="½ÇÇè3 °á°ú" src="images/image3.png" />
+<img width="827" alt="ì‹¤í—˜3 ê²°ê³¼" src="images/image3.png" />
 
 ---
 
-<h3>3. ½ÇÇè °á°ú ¹× ºĞ¼®</h3>
+<h3>3. ì‹¤í—˜ ê²°ê³¼ ë° ë¶„ì„</h3>
 
-**ºĞ¼®**: ±âº»Çü ½ºÆ®¸²À» »ç¿ëÇÔÀ¸·Î½á °´Ã¼ »ı¼º ¹× °ü¸® ¿À¹öÇìµå¸¦ ÁÙ¿´°í, º´·Ä Ã³¸® ½Ã ÄÚ¾îÀÇ ¿¬»ê ´É·ÂÀ» ´õ¿í ¼ø¼öÇÏ°Ô È°¿ëÇÒ ¼ö ÀÖ¾ú½À´Ï´Ù.
+**ë¶„ì„**: ê¸°ë³¸í˜• ìŠ¤íŠ¸ë¦¼ì„ ì‚¬ìš©í•¨ìœ¼ë¡œì¨ ê°ì²´ ìƒì„± ë° ê´€ë¦¬ ì˜¤ë²„í—¤ë“œë¥¼ ì¤„ì˜€ê³ , ë³‘ë ¬ ì²˜ë¦¬ ì‹œ ì½”ì–´ì˜ ì—°ì‚° ëŠ¥ë ¥ì„ ë”ìš± ìˆœìˆ˜í•˜ê²Œ í™œìš©í•  ìˆ˜ ìˆì—ˆìŠµë‹ˆë‹¤.
 
-**ÀÌÀ¯**: parallelStream()Àº ½º·¹µå »ı¼º, µ¥ÀÌÅÍ ºĞÇÒ(Split), °á°ú ÇÕÄ¡±â(Combine) °úÁ¤¿¡¼­ ÀÚ¿ø(Overhead)ÀÌ ¼Ò¸ğµË´Ï´Ù. µû¶ó¼­ ¿¬»ê ÀÚÃ¼°¡ ¸Å¿ì °¡º­¿ì¸é º´·ÄÈ­ ÁØºñ ½Ã°£ÀÌ ´õ ±æ¾îÁú ¼ö ÀÖÀ¸³ª, º» ½ÇÇèÃ³·³ ¹«°Å¿î ¿¬»ê°ú ±âº»Çü ½ºÆ®¸²ÀÌ °áÇÕµÉ ¶§ ÃÖÀûÀÇ ¼º´ÉÀ» ³À´Ï´Ù.
+**ì´ìœ **: parallelStream()ì€ ìŠ¤ë ˆë“œ ìƒì„±, ë°ì´í„° ë¶„í• (Split), ê²°ê³¼ í•©ì¹˜ê¸°(Combine) ê³¼ì •ì—ì„œ ìì›(Overhead)ì´ ì†Œëª¨ë©ë‹ˆë‹¤. ë”°ë¼ì„œ ì—°ì‚° ìì²´ê°€ ë§¤ìš° ê°€ë²¼ìš°ë©´ ë³‘ë ¬í™” ì¤€ë¹„ ì‹œê°„ì´ ë” ê¸¸ì–´ì§ˆ ìˆ˜ ìˆìœ¼ë‚˜, ë³¸ ì‹¤í—˜ì²˜ëŸ¼ ë¬´ê±°ìš´ ì—°ì‚°ê³¼ ê¸°ë³¸í˜• ìŠ¤íŠ¸ë¦¼ì´ ê²°í•©ë  ë•Œ ìµœì ì˜ ì„±ëŠ¥ì„ ëƒ…ë‹ˆë‹¤.
+
+---
+
+# ì¤‘ê°„ ì—°ì‚°ì ê³¼ë‹¤ ì‚¬ìš© ë¬¸ì œ
+
+## ğŸ“‹ ê°œìš”
+
+Java Stream APIì—ì„œ `filter()`, `map()` ê°™ì€ ì¤‘ê°„ ì—°ì‚°ìë¥¼ ê³¼ë„í•˜ê²Œ ë¶„ë¦¬í•˜ë©´ ê° stageë¥¼ í†µê³¼í•  ë•Œë§ˆë‹¤ ëŒë‹¤ í˜¸ì¶œ ì˜¤ë²„í—¤ë“œê°€ ëˆ„ì ë˜ì–´ ì„±ëŠ¥ ì €í•˜ê°€ ë°œìƒí•  ìˆ˜ ìˆë‹¤.
+
+## ğŸ” ë¬¸ì œì 
+
+Stream íŒŒì´í”„ë¼ì¸ì—ì„œ ì¤‘ê°„ ì—°ì‚°ìë¥¼ ê³¼ë„í•˜ê²Œ ë¶„ë¦¬í•˜ë©´, **ê° ì—°ì‚° ë‹¨ê³„(stage)ë¥¼ í†µê³¼í•  ë•Œë§ˆë‹¤ Predicateë‚˜ Functionê³¼ ê°™ì€ ëŒë‹¤ í‘œí˜„ì‹ì´ ì¶”ê°€ë¡œ í˜¸ì¶œ**ëœë‹¤. 
+ì´ë¡œ ì¸í•´ ë‹¨ì¼ ìš”ì†Œê°€ **íŒŒì´í”„ë¼ì¸**ì„ ì§€ë‚˜ê°€ëŠ” ë™ì•ˆ ìˆ˜í–‰ë˜ëŠ” í•¨ìˆ˜ í˜¸ì¶œ íšŸìˆ˜ê°€ ì¦ê°€í•˜ê³ , ê·¸ì— ë”°ë¥¸ **í˜¸ì¶œ ì˜¤ë²„í—¤ë“œê°€ ëˆ„ì **ë˜ì–´ ì „ì²´ ì²˜ë¦¬ ì„±ëŠ¥ì´ ì €í•˜ë  ìˆ˜ ìˆë‹¤. 
+ë˜í•œ íŒŒì´í”„ë¼ì¸ ë‹¨ê³„ ìˆ˜ê°€ ë¶ˆí•„ìš”í•˜ê²Œ ë§ì•„ì§€ë©´, **JVM**ì´ ì—°ì‚° íë¦„ì„ ë‹¨ìˆœí™”í•˜ê±°ë‚˜ ëŒë‹¤ë¥¼ ì¸ë¼ì´ë‹í•˜ëŠ” ë“±ì˜ ìµœì í™”ë¥¼ ì ìš©í•˜ê¸° ì–´ë ¤ì›Œì ¸, ê²°ê³¼ì ìœ¼ë¡œ ì‹¤í–‰ ì„±ëŠ¥ ê°œì„ ì„ ìœ„í•œ **ìµœì í™” ê¸°íšŒê°€ ê°ì†Œ**í•˜ëŠ” ë¬¸ì œê°€ ë°œìƒí•œë‹¤.
+
+### ì˜ˆì‹œ: ê³¼ë„í•˜ê²Œ ë¶„ë¦¬ëœ íŒŒì´í”„ë¼ì¸
+
+```java
+names.stream()
+    .filter(name -> name.startsWith("A"))      // stage 1
+    .filter(name -> name.length() > 3)          // stage 2
+    .map(String::toUpperCase)                   // stage 3
+    .map(name -> name + " is a name")           // stage 4
+    .collect(Collectors.toList());
+```
+
+## âœ… ì†”ë£¨ì…˜: Stage ìˆ˜ ì¤„ì´ê¸°
+
+### ìµœì í™” ì „ëµ
+
+1. **Filter ê²°í•©**: ì—¬ëŸ¬ `filter()` í˜¸ì¶œì„ í•˜ë‚˜ë¡œ ë³‘í•© (`&&` ì—°ì‚°ì ì‚¬ìš©)
+2. **Map ê²°í•©**: ì—°ì†ëœ `map()` í˜¸ì¶œì„ í•˜ë‚˜ë¡œ ë³‘í•©
+3. **ëŒë‹¤ í˜¸ì¶œ íšŸìˆ˜ ê°ì†Œ**: Stage ìˆ˜ê°€ ì¤„ë©´ ëŒë‹¤ í˜¸ì¶œ íšŸìˆ˜ê°€ ê°ì†Œ
+4. **JVM ìµœì í™”**: ì¸ë¼ì´ë‹ ë° íŒŒì´í”„ë¼ì¸ ìµœì í™”ì— ìœ ë¦¬
+
+### ìµœì í™”ëœ ì½”ë“œ
+
+```java
+names.stream()
+    .filter(name -> name.startsWith("A") && name.length() > 3)
+    .map(name -> name.toUpperCase() + " is a name")
+    .collect(Collectors.toList());
+```
+
+## ğŸ§ª ì‹¤í—˜ ì„¤ì •
+
+### í…ŒìŠ¤íŠ¸ í™˜ê²½
+
+- **ë°ì´í„° í¬ê¸°**: 5,000,000 / 100,000,000 ê±´
+- **Warmup íšŸìˆ˜**: 5íšŒ
+- **ì¸¡ì • íšŸìˆ˜**: 10íšŒ (ìµœì†Œê°’ ê¸°ì¤€)
+- **ì¸¡ì • ë°©ë²•**: Best time of multiple runs
+
+### JVM Warm-upì˜ í•„ìš”ì„±
+
+JVMì€ **Just-In-Time(JIT) ì»´íŒŒì¼ëŸ¬**ë¥¼ ì‚¬ìš©í•˜ì—¬ ìì£¼ ì‹¤í–‰ë˜ëŠ” ë°”ì´íŠ¸ì½”ë“œë¥¼ ëŸ°íƒ€ì„ ì¤‘ì— **ë„¤ì´í‹°ë¸Œ ì½”ë“œë¡œ ë³€í™˜**í•˜ê³  ìµœì í™”í•œë‹¤. 
+ì´ ê³¼ì •ì€ í”„ë¡œê·¸ë¨ì´ ì‹¤í–‰ë˜ë©´ì„œ ì ì§„ì ìœ¼ë¡œ ì´ë£¨ì–´ì§€ê¸° ë•Œë¬¸ì—, **ì‹¤í–‰ ì´ˆë°˜ì—ëŠ” ì¸í„°í”„ë¦¬í„° ê¸°ë°˜ ì‹¤í–‰ì˜ ë¹„ì¤‘ì´ ë†’**ê³  ì¸ë¼ì´ë‹, ë£¨í”„ ìµœì í™”, ë¶„ê¸° ì˜ˆì¸¡ ê°œì„ ê³¼ ê°™ì€ ê³ ê¸‰ **ìµœì í™”ê°€ ì•„ì§ ì¶©ë¶„íˆ ì ìš©ë˜ì§€ ì•Šì€ ìƒíƒœ**ì´ë‹¤. 
+ë”°ë¼ì„œ í”„ë¡œê·¸ë¨ ì‹œì‘ ì§í›„ì˜ ì‹¤í–‰ ê²°ê³¼ëŠ” JVMì´ ì¶©ë¶„íˆ ì›Œë°ì—…ëœ ì´í›„ì˜ ì‹¤ì œ ì„±ëŠ¥ì„ ì •í™•í•˜ê²Œ ë°˜ì˜í•˜ì§€ ëª»í•  ê°€ëŠ¥ì„±ì´ í¬ë©°, ì‹ ë¢°í•  ìˆ˜ ìˆëŠ” ì„±ëŠ¥ ì¸¡ì •ì„ ìœ„í•´ì„œëŠ” ì¼ì • íšŸìˆ˜ì˜ ë°˜ë³µ ì‹¤í–‰ì„ í†µí•œ JVM ì›Œë°ì—… ê³¼ì •ì´ í•„ìš”í•˜ë‹¤.
+
+
+#### Warm-up ì½”ë“œ
+
+```java
+// JVM warmup (important)
+for (int i = 0; i < 5; i++) {
+    version1(names);
+    version2(names);
+}
+```
+
+**ëª©ì :**
+- ë‘ êµ¬í˜„(version1, version2)ì„ ë™ì¼ íšŸìˆ˜ë¡œ ì‚¬ì „ ì‹¤í–‰
+- JIT ì»´íŒŒì¼ëŸ¬ê°€ Stream íŒŒì´í”„ë¼ì¸ì„ ì¶©ë¶„íˆ ê´€ì°°í•˜ë„ë¡ ìœ ë„
+- ëŒë‹¤ í‘œí˜„ì‹, ë©”ì„œë“œ ì°¸ì¡°, ì¡°ê±´ ë¶„ê¸° ì½”ë“œì— ëŒ€í•´ ìµœì í™” ì ìš©
+
+## ğŸ“Š ì‹¤í—˜ ê²°ê³¼
+
+### ë°ì´í„° í¬ê¸°: 5,000,000 ê±´
+
+| Version | ì‹¤í–‰ ì‹œê°„ | ì„¤ëª… |
+|---------|----------|------|
+| Version 1 (more stages) | 47.4147 ms | ì—¬ëŸ¬ filter/map ì‚¬ìš© |
+| Version 2 (fewer stages) | 74.7858 ms | ê²°í•©ëœ filter/map ì‚¬ìš© |
+
+âš ï¸ **ì£¼ì˜**: ì‘ì€ ë°ì´í„°ì—ì„œëŠ” ê²°í•© ì¡°ê±´ì‹(`&&`)ì´ ì˜¤íˆë ¤ ë¶ˆë¦¬í•˜ê±°ë‚˜, ì¸¡ì • ë…¸ì´ì¦ˆ/í™˜ê²½ ì˜í–¥ì´ í´ ìˆ˜ ìˆìŒ
+
+### ë°ì´í„° í¬ê¸°: 100,000,000 ê±´
+
+| Version | ì‹¤í–‰ ì‹œê°„ (1ì°¨) | ì‹¤í–‰ ì‹œê°„ (2ì°¨) |
+|---------|----------------|----------------|
+| Version 1 (more stages) | 3866.1665 ms | 9846.0332 ms |
+| Version 2 (fewer stages) | 2152.7165 ms | 2223.2132 ms |
+
+âœ… **ê²°ë¡ **: ë°ì´í„°ê°€ ì»¤ì§ˆìˆ˜ë¡ stage ì¶•ì†Œ íš¨ê³¼ê°€ í¬ê²Œ ë‚˜íƒ€ë‚¨
+
+## ğŸ“ˆ ì„±ëŠ¥ì— ì˜í–¥ì„ ì£¼ëŠ” ìš”ì¸
+
+### 1. Short-Circuit ë™ì‘ (ë‹¨ë½ í‰ê°€)
+
+```java
+// A && B: Aê°€ falseë©´ BëŠ” í‰ê°€í•˜ì§€ ì•ŠìŒ
+name.startsWith("A") && name.length() > 3
+
+// A || B: Aê°€ trueë©´ BëŠ” í‰ê°€í•˜ì§€ ì•ŠìŒ
+name.isEmpty() || name.startsWith("A")
+```
+
+**ìµœì í™” íŒ**: ë¹„ì‹¼ ì¡°ê±´ì„ ë’¤ë¡œ ë³´ë‚´ëŠ” ê²ƒì´ ì¼ë°˜ì ìœ¼ë¡œ ìœ ë¦¬
+
+### 2. ì¡°ê±´ì˜ ì„ ë³„ë ¥ (Selectivity)
+
+ë¹¨ë¦¬ ë§ì€ ì›ì†Œë¥¼ ê±¸ëŸ¬ë‚´ëŠ” ì¡°ê±´ì„ ë¨¼ì € ë‘ë©´ ì´í›„ ì—°ì‚°ì´ ì¤„ì–´ë“¦
+
+```java
+// ì¢‹ì€ ì˜ˆ: ì„ ë³„ë ¥ì´ ë†’ì€ ì¡°ê±´ì„ ë¨¼ì €
+.filter(name -> name.length() > 3 && name.startsWith("A"))
+
+// ë‚˜ìœ ì˜ˆ: ì„ ë³„ë ¥ì´ ë‚®ì€ ì¡°ê±´ì„ ë¨¼ì €
+.filter(name -> name.startsWith("A") && name.length() > 3)
+```
+
+### 3. ë¶„ê¸° ì˜ˆì¸¡ ë° CPU íŒŒì´í”„ë¼ì¸
+
+ì¡°ê±´ ê²°ê³¼ê°€ ë¶ˆê·œì¹™í•˜ë©´ CPUì˜ ë¶„ê¸° ì˜ˆì¸¡ ì‹¤íŒ¨ê°€ ëŠ˜ì–´ë‚˜ ì„±ëŠ¥ì— ì˜í–¥ì„ ì¤„ ìˆ˜ ìˆìŒ
+
+## ğŸ”¬ ì‹¤í—˜ ì½”ë“œ
+
+<details>
+<summary>ì „ì²´ ì½”ë“œ ë³´ê¸°</summary>
+
+```java
+package lab02;
+
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
+/**
+ * Problem: Overuse of intermediate operations (too many stages)
+ * 
+ * Solution: Reduce the number of stages
+ * - Each stage introduces additional Predicate/Function calls.
+ * - Fewer stages may reduce lambda invocation overhead and pipeline traversal cost.
+ * 
+ * Note:
+ * - Combining predicates with && / || can affect performance due to short-circuiting
+ *   and branch prediction behavior.
+ */
+public class OveruseOperations04 {
+
+    static final int SIZE = 5_000_000;
+    static final int WARMUP = 5;
+    static final int RUNS = 10;
+    static volatile int blackhole;
+
+    public static void main(String[] args) {
+        List<String> names = generateData(SIZE);
+
+        // Sanity check
+        List<String> r1 = version1(names);
+        List<String> r2 = version2(names);
+        if (!r1.equals(r2)) {
+            throw new IllegalStateException("Results differ between version1 and version2!");
+        }
+
+        // JVM warmup
+        for (int i = 0; i < WARMUP; i++) {
+            consume(version1(names));
+            consume(version2(names));
+            consume(version2_conditionOrder(names));
+        }
+
+        // Measure
+        long bestV1 = measureBestNanos(() -> consume(version1(names)), RUNS);
+        long bestV2 = measureBestNanos(() -> consume(version2(names)), RUNS);
+        long bestV2Order = measureBestNanos(() -> consume(version2_conditionOrder(names)), RUNS);
+
+        System.out.println("=== Data size: " + SIZE + " ===");
+        System.out.printf("Version 1 (more stages) best: %.3f ms%n", nanosToMs(bestV1));
+        System.out.printf("Version 2 (fewer stages) best: %.3f ms%n", nanosToMs(bestV2));
+        System.out.printf("Version 2 (condition order) best: %.3f ms%n", nanosToMs(bestV2Order));
+    }
+
+    /** Version 1: more stages */
+    static List<String> version1(List<String> names) {
+        return names.stream()
+            .filter(name -> name.startsWith("A"))
+            .filter(name -> name.length() > 3)
+            .map(String::toUpperCase)
+            .map(name -> name + " is a name")
+            .collect(Collectors.toList());
+    }
+
+    /** Version 2: fewer stages */
+    static List<String> version2(List<String> names) {
+        return names.stream()
+            .filter(name -> name.startsWith("A") && name.length() > 3)
+            .map(name -> name.toUpperCase() + " is a name")
+            .collect(Collectors.toList());
+    }
+
+    /** Version 2: condition order experiment */
+    static List<String> version2_conditionOrder(List<String> names) {
+        return names.stream()
+            .filter(name -> name.length() > 3 && name.startsWith("A"))
+            .map(name -> name.toUpperCase() + " is a name")
+            .collect(Collectors.toList());
+    }
+
+    static long measureBestNanos(Runnable task, int runs) {
+        long best = Long.MAX_VALUE;
+        for (int i = 0; i < runs; i++) {
+            long start = System.nanoTime();
+            task.run();
+            long end = System.nanoTime();
+            best = Math.min(best, end - start);
+        }
+        return best;
+    }
+
+    static double nanosToMs(long nanos) {
+        return nanos / 1_000_000.0;
+    }
+
+    static void consume(List<String> list) {
+        blackhole ^= list.size();
+        if (!list.isEmpty()) {
+            blackhole ^= list.get(0).hashCode();
+        }
+    }
+
+    static List<String> generateData(int size) {
+        List<String> list = new ArrayList<>(size);
+        Random r = new Random(42);
+        for (int i = 0; i < size; i++) {
+            char first = (i % 10 == 0) ? 'A' : (char) ('B' + r.nextInt(24));
+            list.add(first + randomWord(r, 3 + r.nextInt(8)));
+        }
+        return list;
+    }
+
+    static String randomWord(Random r, int len) {
+        StringBuilder sb = new StringBuilder(len);
+        for (int i = 0; i < len; i++) {
+            sb.append((char) ('a' + r.nextInt(26)));
+        }
+        return sb.toString();
+    }
+}
+```
+
+</details>
+
+## ğŸ’¡ ê²°ë¡ 
+
+ë°ì´í„° í¬ê¸°ê°€ ë¹„êµì  **ì‘ì€ ê²½ìš°**(ì•½ 5M ìˆ˜ì¤€)ì—ëŠ” ì¸¡ì • ê²°ê³¼ì˜ í¸ì°¨ê°€ í¬ê²Œ ë‚˜íƒ€ë‚  ìˆ˜ ìˆë‹¤. ì´ êµ¬ê°„ì—ì„œëŠ” JVMì˜ JIT ìµœì í™” ì§„í–‰ ìƒíƒœ, ì‹¤í—˜ ì‹œì ì˜ CPU ë¶€í•˜, ìš´ì˜ì²´ì œ ìŠ¤ì¼€ì¤„ë§ ê°„ì„­ ë“± ì™¸ë¶€ ìš”ì¸ì˜ ì˜í–¥ì´ ì»¤ì§€ë©°, ì´ë¡œ ì¸í•´ ì‹¤í—˜ ê²°ê³¼ê°€ ì¼ê´€ë˜ì§€ ì•Šê±°ë‚˜ ê²½ìš°ì— ë”°ë¼ ì„±ëŠ¥ ìš°ìœ„ê°€ ë’¤ë°”ë€ŒëŠ” í˜„ìƒì´ ë°œìƒí•  ìˆ˜ ìˆë‹¤. ì¦‰, ì´ ê·œëª¨ì—ì„œëŠ” Stream íŒŒì´í”„ë¼ì¸ì˜ **stage ìˆ˜ ì°¨ì´ë³´ë‹¤ ëŸ°íƒ€ì„ í™˜ê²½ ìš”ì†Œê°€ ì„±ëŠ¥ì— ë¯¸ì¹˜ëŠ” ì˜í–¥ì´ ë” í¬ê²Œ ì‘ìš©**í•  ê°€ëŠ¥ì„±ì´ ìˆë‹¤.
+
+ë°˜ë©´ ë°ì´í„° í¬ê¸°ê°€ ì¶©ë¶„íˆ **í° ê²½ìš°**(ì•½ 100M ìˆ˜ì¤€)ì—ëŠ” Stream íŒŒì´í”„ë¼ì¸ êµ¬ì¡° ì°¨ì´ì— ë”°ë¥¸ ì„±ëŠ¥ ì˜í–¥ì´ ëˆ„ì ë˜ì–´ ë³´ë‹¤ ëª…í™•í•œ ê²°ê³¼ê°€ ê´€ì°°ëœë‹¤. ì¤‘ê°„ ì—°ì‚°ì(stage) ìˆ˜ê°€ ë§ì„ìˆ˜ë¡ ëŒë‹¤ í˜¸ì¶œ íšŸìˆ˜ì™€ íŒŒì´í”„ë¼ì¸ traversal ë¹„ìš©ì´ ë°˜ë³µì ìœ¼ë¡œ ë°œìƒí•˜ë©°, ì´ëŸ¬í•œ ì˜¤ë²„í—¤ë“œëŠ” ëŒ€ê·œëª¨ ë°ì´í„° ì²˜ë¦¬ ê³¼ì •ì—ì„œ ëˆ„ì ëœë‹¤. ê·¸ ê²°ê³¼ stage ìˆ˜ë¥¼ ì¤„ì¸ êµ¬í˜„ ë°©ì‹ì—ì„œëŠ” **ëŒë‹¤ í˜¸ì¶œ ì˜¤ë²„í—¤ë“œì™€ íŒŒì´í”„ë¼ì¸ ë¹„ìš©ì´ ê°ì†Œ**í•˜ì—¬, ë‘ êµ¬í˜„ ê°„ ì„±ëŠ¥ ì°¨ì´ê°€ ëšœë ·í•˜ê²Œ ë‚˜íƒ€ë‚œë‹¤.
+
+ë˜í•œ ì¡°ê±´ ê²°í•© ë°©ì‹ ì—­ì‹œ ì„±ëŠ¥ì— ì¤‘ìš”í•œ ì˜í–¥ì„ ë¯¸ì¹  ìˆ˜ ìˆë‹¤. **`&&`, `||` ì—°ì‚°ì**ëŠ” ë‹¨ë½ í‰ê°€(short-circuit) íŠ¹ì„±ì„ ê°€ì§€ë¯€ë¡œ ì¡°ê±´ì˜ í‰ê°€ ìˆœì„œì— ë”°ë¼ ì‹¤ì œ ì‹¤í–‰ë˜ëŠ” ì—°ì‚° íšŸìˆ˜ê°€ ë‹¬ë¼ì§„ë‹¤. ì¼ë°˜ì ìœ¼ë¡œ í‰ê°€ ë¹„ìš©ì´ ë‚®ê±°ë‚˜ ë¹ ë¥´ê²Œ false ë˜ëŠ” trueê°€ ê²°ì •ë  ê°€ëŠ¥ì„±ì´ ë†’ì€ ì¡°ê±´ì„ ì•ì— ë°°ì¹˜í• ìˆ˜ë¡ ë¶ˆí•„ìš”í•œ ì¡°ê±´ í‰ê°€ë¥¼ ì¤„ì¼ ìˆ˜ ìˆì–´ ì„±ëŠ¥ ì¸¡ë©´ì—ì„œ ìœ ë¦¬í•˜ë‹¤. ë”°ë¼ì„œ ì¡°ê±´ì„ ë‹¨ìˆœíˆ ê²°í•©í•˜ëŠ” ê²ƒë§Œìœ¼ë¡œ ìµœì í™”ê°€ ë³´ì¥ë˜ëŠ” ê²ƒì€ ì•„ë‹ˆë©°, ê° ì¡°ê±´ì˜ ë¹„ìš©ê³¼ ì‹¤íŒ¨ í™•ë¥ ì„ ê³ ë ¤í•œ ìˆœì„œ ì„¤ê³„ê°€ í•„ìš”í•˜ë‹¤.
+
+
+
+## ğŸ“š ì°¸ê³  ìë£Œ
+
+- [Java Stream API Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html)
+---
+
+**Last Updated**: 2026-01-12
