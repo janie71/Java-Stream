@@ -470,7 +470,7 @@ public class OveruseOperations04 {
 
 
 **<h2>5. 6번 부가 설명: 가변 리스트의 병렬 처리 </h2>**
-<img alt="병렬 스레드 처리" src="images/ddddd.png" />
+<img alt="병렬 스레드 처리" src="images/dddddd.png" />
 - 가변 리스트는 아래와 같은 방식으로 만들어야 함
   - `List<Integer> results = new ArrayList<>();`
   - `List<Integer> results = new CopyOnWriteArrayList<>();`
